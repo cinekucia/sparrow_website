@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SPARROWS AI - Human-Centered AI for Learning and Decision-Making. Pierwszy spin-off AI z Politechniki Warszawskiej. We make AI applicable in medicine and education.">
+  <meta name="description"
+    content="SPARROWS AI - Human-Centered AI for Learning and Decision-Making. Pierwszy spin-off AI z Politechniki Warszawskiej. We make AI applicable in medicine and education.">
   <title>SPARROWS AI | Human-Centered AI</title>
-  
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="styles.css">
-  
+
   <!-- Favicon placeholder or simple SVG icon -->
   <link rel="icon" type="image/svg+xml" href="sparrow-logo.svg">
 </head>
+
 <body>
 
   <!-- Background Gradients and Grid Overlay -->
@@ -24,10 +34,13 @@
       <a href="#" class="logo-wrapper">
         <div class="logo-svg-container">
           <svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 160 85 L 185 85 L 165 70 L 140 70 L 125 85 L 90 95 L 40 60 L 75 98 L 45 108 L 100 135 L 30 155 L 75 142 L 105 142 L 135 125 L 155 105 Z" 
-                  fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linejoin="miter" stroke-linecap="square" />
-            <path d="M 158 87 L 180 87 L 163 74 L 142 74 L 128 87 L 95 97 L 50 70 L 78 101 L 55 111 L 102 133 L 40 151 L 78 140 L 103 140 L 132 125 L 152 107 Z" 
-                  fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="miter" stroke-linecap="square" opacity="0.9" />
+            <path
+              d="M 160 85 L 185 85 L 165 70 L 140 70 L 125 85 L 90 95 L 40 60 L 75 98 L 45 108 L 100 135 L 30 155 L 75 142 L 105 142 L 135 125 L 155 105 Z"
+              fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linejoin="miter" stroke-linecap="square" />
+            <path
+              d="M 158 87 L 180 87 L 163 74 L 142 74 L 128 87 L 95 97 L 50 70 L 78 101 L 55 111 L 102 133 L 40 151 L 78 140 L 103 140 L 132 125 L 152 107 Z"
+              fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="miter" stroke-linecap="square"
+              opacity="0.9" />
           </svg>
         </div>
         <span class="brand-text">Sparrows <span>AI</span></span>
@@ -51,11 +64,73 @@
 
       <!-- Navigation Actions -->
       <div class="nav-actions">
-        <!-- Language Switch Button -->
-        <button class="lang-switch-btn" id="lang-switch-btn" aria-label="Toggle language">
-          <span class="lang-label lang-pl"><span class="active-lang">PL</span> / EN</span>
-          <span class="lang-label lang-en">PL / <span class="active-lang">EN</span></span>
-        </button>
+        <!-- Language Dropdown -->
+        <div class="lang-dropdown" id="lang-dropdown">
+          <button class="lang-dropdown-btn" id="lang-dropdown-btn" aria-haspopup="true" aria-expanded="false"
+            aria-label="Select language">
+            <!-- Active flag (Polish) -->
+            <span class="flag lang-pl">
+              <svg class="flag-icon" viewBox="0 0 16 10" width="16" height="10">
+                <rect width="16" height="5" fill="#fff" />
+                <rect y="5" width="16" height="5" fill="#dc143c" />
+              </svg>
+            </span>
+            <!-- Active flag (English) -->
+            <span class="flag lang-en">
+              <svg class="flag-icon" viewBox="0 0 60 30" width="16" height="10">
+                <clipPath id="uk-flag-btn-clip">
+                  <path d="M0,0 v30 h60 v-30 z" />
+                </clipPath>
+                <rect width="60" height="30" fill="#012169" />
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" clip-path="url(#uk-flag-btn-clip)" />
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#c8102e" stroke-width="2"
+                  clip-path="url(#uk-flag-btn-clip)" />
+                <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                <path d="M30,0 v30 M0,15 h60" stroke="#c8102e" stroke-width="6" />
+              </svg>
+            </span>
+            <span class="lang-btn-text">
+              <span class="lang-pl">Język</span>
+              <span class="lang-en">Language</span>
+            </span>
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <ul class="lang-dropdown-menu" id="lang-dropdown-menu">
+            <li>
+              <button class="lang-dropdown-item" data-lang="pl" aria-label="Zmień język na polski">
+                <span class="flag">
+                  <svg class="flag-icon" viewBox="0 0 16 10" width="16" height="10">
+                    <rect width="16" height="5" fill="#fff" />
+                    <rect y="5" width="16" height="5" fill="#dc143c" />
+                  </svg>
+                </span>
+                Polski
+              </button>
+            </li>
+            <li>
+              <button class="lang-dropdown-item" data-lang="en" aria-label="Change language to English">
+                <span class="flag">
+                  <svg class="flag-icon" viewBox="0 0 60 30" width="16" height="10">
+                    <clipPath id="uk-flag-menu-clip">
+                      <path d="M0,0 v30 h60 v-30 z" />
+                    </clipPath>
+                    <rect width="60" height="30" fill="#012169" />
+                    <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"
+                      clip-path="url(#uk-flag-menu-clip)" />
+                    <path d="M0,0 L60,30 M60,0 L0,30" stroke="#c8102e" stroke-width="2"
+                      clip-path="url(#uk-flag-menu-clip)" />
+                    <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                    <path d="M30,0 v30 M0,15 h60" stroke="#c8102e" stroke-width="6" />
+                  </svg>
+                </span>
+                English
+              </button>
+            </li>
+          </ul>
+        </div>
 
         <!-- Mobile Menu Toggle Button -->
         <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
@@ -74,7 +149,10 @@
         <div class="hero-content">
           <!-- WUT Spin-off Badge -->
           <div class="hero-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
             <span class="lang-pl">Pierwszy AI spin-off z Politechniki Warszawskiej</span>
             <span class="lang-en">First AI spin-off from Warsaw University of Technology</span>
           </div>
@@ -93,12 +171,17 @@
 
           <!-- Short Bio -->
           <p class="hero-desc">
-            <span class="lang-pl">Projektujemy rozwiązania AI, które wspierają ludzi, instytucje i organizacje. Łącząc badania naukowe z inżynierską praktyką, sprawiamy, że zaawansowana technologia staje się użyteczna, bezpieczna i zrozumiała.</span>
-            <span class="lang-en">We design AI solutions that augment humans, institutions, and organizations. By bridging scientific research with engineering, we translate advanced AI into safe, practical, and meaningful impact.</span>
+            <span class="lang-pl">Projektujemy rozwiązania AI, które wspierają ludzi, instytucje i organizacje. Łącząc
+              badania naukowe z inżynierską praktyką, sprawiamy, że zaawansowana technologia staje się użyteczna,
+              bezpieczna i zrozumiała.</span>
+            <span class="lang-en">We design AI solutions that augment humans, institutions, and organizations. By
+              bridging scientific research with engineering, we translate advanced AI into safe, practical, and
+              meaningful impact.</span>
           </p>
 
           <!-- Slogan / Call-to-actions -->
-          <p class="hero-desc" style="font-style: italic; margin-top: -1.5rem; margin-bottom: 2rem; color: var(--accent-light); font-weight: 500;">
+          <p class="hero-desc"
+            style="font-style: italic; margin-top: -1.5rem; margin-bottom: 2rem; color: var(--accent-light); font-weight: 500;">
             <span>&ldquo;we make AI applicable&rdquo;</span>
           </p>
 
@@ -119,12 +202,17 @@
           <div class="hero-graphic-glow"></div>
           <div class="hero-graphic-logo">
             <svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 160 85 L 185 85 L 165 70 L 140 70 L 125 85 L 90 95 L 40 60 L 75 98 L 45 108 L 100 135 L 30 155 L 75 142 L 105 142 L 135 125 L 155 105 Z" 
-                    fill="none" stroke="#3b82f6" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.3" filter="url(#glow)" />
-              <path d="M 160 85 L 185 85 L 165 70 L 140 70 L 125 85 L 90 95 L 40 60 L 75 98 L 45 108 L 100 135 L 30 155 L 75 142 L 105 142 L 135 125 L 155 105 Z" 
-                    fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linejoin="miter" stroke-linecap="square" />
-              <path d="M 158 87 L 180 87 L 163 74 L 142 74 L 128 87 L 95 97 L 50 70 L 78 101 L 55 111 L 102 133 L 40 151 L 78 140 L 103 140 L 132 125 L 152 107 Z" 
-                    fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="miter" stroke-linecap="square" opacity="0.9" />
+              <path
+                d="M 160 85 L 185 85 L 165 70 L 140 70 L 125 85 L 90 95 L 40 60 L 75 98 L 45 108 L 100 135 L 30 155 L 75 142 L 105 142 L 135 125 L 155 105 Z"
+                fill="none" stroke="#3b82f6" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"
+                opacity="0.3" filter="url(#glow)" />
+              <path
+                d="M 160 85 L 185 85 L 165 70 L 140 70 L 125 85 L 90 95 L 40 60 L 75 98 L 45 108 L 100 135 L 30 155 L 75 142 L 105 142 L 135 125 L 155 105 Z"
+                fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linejoin="miter" stroke-linecap="square" />
+              <path
+                d="M 158 87 L 180 87 L 163 74 L 142 74 L 128 87 L 95 97 L 50 70 L 78 101 L 55 111 L 102 133 L 40 151 L 78 140 L 103 140 L 132 125 L 152 107 Z"
+                fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="miter" stroke-linecap="square"
+                opacity="0.9" />
               <defs>
                 <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
                   <feGaussianBlur stdDeviation="6" result="blur" />
@@ -154,39 +242,59 @@
           <!-- Feature 1: Human-Centered AI -->
           <div class="about-feature-item">
             <div class="feature-icon-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
             </div>
             <div class="feature-info">
               <h3 class="lang-pl">Human-Centered AI</h3>
               <h3 class="lang-en">Human-Centered AI</h3>
-              <p class="lang-pl">Tworzymy systemy AI, które rozwijają i wzmacniają ludzkie kompetencje oraz możliwości decyzyjne, zamiast je zastępować.</p>
-              <p class="lang-en">We build AI systems that support and augment human capabilities and decision-making rather than replacing them.</p>
+              <p class="lang-pl">Tworzymy systemy AI, które rozwijają i wzmacniają ludzkie kompetencje oraz możliwości
+                decyzyjne, zamiast je zastępować.</p>
+              <p class="lang-en">We build AI systems that support and augment human capabilities and decision-making
+                rather than replacing them.</p>
             </div>
           </div>
 
           <!-- Feature 2: Trustworthy AI -->
           <div class="about-feature-item">
             <div class="feature-icon-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
             </div>
             <div class="feature-info">
               <h3 class="lang-pl">Godna zaufania sztuczna inteligencja</h3>
               <h3 class="lang-en">Trustworthy AI</h3>
-              <p class="lang-pl">Projektujemy rozwiązania bezpieczne, transparentne i zgodne z zasadami etyki, gwarantując pełną kontrolę i rzetelność działania.</p>
-              <p class="lang-en">We design secure, transparent, and ethically compliant solutions, guaranteeing reliability and responsible technology use.</p>
+              <p class="lang-pl">Projektujemy rozwiązania bezpieczne, transparentne i zgodne z zasadami etyki,
+                gwarantując pełną kontrolę i rzetelność działania.</p>
+              <p class="lang-en">We design secure, transparent, and ethically compliant solutions, guaranteeing
+                reliability and responsible technology use.</p>
             </div>
           </div>
 
           <!-- Feature 3: AI Literacy -->
           <div class="about-feature-item">
             <div class="feature-icon-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
             </div>
             <div class="feature-info">
               <h3 class="lang-pl">Edukacja i kompetencje AI</h3>
               <h3 class="lang-en">AI Literacy</h3>
-              <p class="lang-pl">Promujemy zrozumienie sztucznej inteligencji. Dostarczamy wiedzę i narzędzia umożliwiające świadome i efektywne korzystanie z systemów AI.</p>
-              <p class="lang-en">We promote a deep understanding of AI, equipping organizations with the knowledge and tools for informed and effective usage.</p>
+              <p class="lang-pl">Promujemy zrozumienie sztucznej inteligencji. Dostarczamy wiedzę i narzędzia
+                umożliwiające świadome i efektywne korzystanie z systemów AI.</p>
+              <p class="lang-en">We promote a deep understanding of AI, equipping organizations with the knowledge and
+                tools for informed and effective usage.</p>
             </div>
           </div>
         </div>
@@ -195,12 +303,18 @@
         <div class="about-summary-card">
           <h3 class="about-summary-title lang-pl">O SPARROWS AI</h3>
           <h3 class="about-summary-title lang-en">About SPARROWS AI</h3>
-          
+
           <p class="about-summary-text lang-pl">
-            Jesteśmy zespołem naukowców, ekspertów technologicznych i innowatorów. Jako <strong>pierwszy spin-off AI z Politechniki Warszawskiej</strong>, łączymy dyscyplinę akademickich badań z dynamiką rynkowych potrzeb. Specjalizujemy się w projektowaniu systemów ułatwiających odpowiedzialne podejmowanie decyzji, optymalizację procesów uczenia się oraz skuteczne wdrażanie zaawansowanych algorytmów uczenia maszynowego.
+            Jesteśmy zespołem naukowców, ekspertów technologicznych i innowatorów. Jako <strong>pierwszy spin-off AI z
+              Politechniki Warszawskiej</strong>, łączymy dyscyplinę akademickich badań z dynamiką rynkowych potrzeb.
+            Specjalizujemy się w projektowaniu systemów ułatwiających odpowiedzialne podejmowanie decyzji, optymalizację
+            procesów uczenia się oraz skuteczne wdrażanie zaawansowanych algorytmów uczenia maszynowego.
           </p>
           <p class="about-summary-text lang-en">
-            We are a team of researchers, technology experts, and innovators. As the <strong>first AI spin-off from Warsaw University of Technology</strong>, we bridge the gap between academic rigor and real-world business needs. We specialize in building systems that support responsible decision-making, optimize learning processes, and integrate advanced machine learning models into institutional infrastructure.
+            We are a team of researchers, technology experts, and innovators. As the <strong>first AI spin-off from
+              Warsaw University of Technology</strong>, we bridge the gap between academic rigor and real-world business
+            needs. We specialize in building systems that support responsible decision-making, optimize learning
+            processes, and integrate advanced machine learning models into institutional infrastructure.
           </p>
 
           <div class="about-summary-meta">
@@ -235,34 +349,54 @@
         <!-- Card 1: AI in Medicine -->
         <div class="specialty-card">
           <div class="specialty-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+            </svg>
           </div>
           <h3 class="specialty-title lang-pl">AI w medycynie</h3>
           <h3 class="specialty-title lang-en">AI in Medicine</h3>
-          <p class="specialty-desc lang-pl">Wspieramy procesy diagnostyczne, analizę danych medycznych oraz procesy decyzyjne w ochronie zdrowia. Tworzymy odpowiedzialne narzędzia wspomagające pracę personelu medycznego.</p>
-          <p class="specialty-desc lang-en">Supporting clinical decision-making, diagnostics, and biomedical data analysis. We design reliable tools that empower healthcare professionals and respect medical standards.</p>
+          <p class="specialty-desc lang-pl">Wspieramy procesy diagnostyczne, analizę danych medycznych oraz procesy
+            decyzyjne w ochronie zdrowia (m.in. we współpracy z Warszawskim Uniwersytetem Medycznym). Tworzymy odpowiedzialne narzędzia wspomagające pracę personelu medycznego.</p>
+          <p class="specialty-desc lang-en">Supporting clinical decision-making, diagnostics, and biomedical data
+            analysis (collaborating with the Medical University of Warsaw, among others). We design reliable tools that empower healthcare professionals and respect medical standards.</p>
         </div>
 
         <!-- Card 2: AI in Education -->
         <div class="specialty-card">
           <div class="specialty-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+              <path d="M6 6h10M6 10h10" />
+            </svg>
           </div>
           <h3 class="specialty-title lang-pl">AI w edukacji</h3>
           <h3 class="specialty-title lang-en">AI in Education</h3>
-          <p class="specialty-desc lang-pl">Rozwijamy technologie edukacyjne (EdTech) oraz programy rozwijania kompetencji cyfrowych (AI Literacy). Projektujemy systemy personalizujące proces nauki.</p>
-          <p class="specialty-desc lang-en">Developing educational technology (EdTech) and AI Literacy frameworks. We build intelligent systems that personalize and accelerate the learning experience for individuals and institutions.</p>
+          <p class="specialty-desc lang-pl">Rozwijamy technologie edukacyjne (EdTech) oraz programy rozwijania
+            kompetencji cyfrowych (AI Literacy). Projektujemy systemy personalizujące proces nauki.</p>
+          <p class="specialty-desc lang-en">Developing educational technology (EdTech) and AI Literacy frameworks. We
+            build intelligent systems that personalize and accelerate the learning experience for individuals and
+            institutions.</p>
         </div>
 
         <!-- Card 3: Research & Development -->
         <div class="specialty-card">
           <div class="specialty-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4M12 8h.01" />
+            </svg>
           </div>
           <h3 class="specialty-title lang-pl">R&D i Machine Learning</h3>
           <h3 class="specialty-title lang-en">R&D & Machine Learning</h3>
-          <p class="specialty-desc lang-pl">Realizujemy interdyscyplinarne projekty badawczo-rozwojowe. Wdrażamy i dostosowujemy nowoczesne algorytmy uczenia maszynowego do specyfiki wymagań klientów.</p>
-          <p class="specialty-desc lang-en">Conducting custom interdisciplinary R&D projects. We design, optimize, and deploy cutting-edge machine learning and deep learning pipelines custom-tailored to strict domain requirements.</p>
+          <p class="specialty-desc lang-pl">Realizujemy interdyscyplinarne projekty badawczo-rozwojowe. Wdrażamy i
+            dostosowujemy nowoczesne algorytmy uczenia maszynowego do specyfiki wymagań klientów.</p>
+          <p class="specialty-desc lang-en">Conducting custom interdisciplinary R&D projects. We design, optimize, and
+            deploy cutting-edge machine learning and deep learning pipelines custom-tailored to strict domain
+            requirements.</p>
         </div>
       </div>
     </div>
@@ -283,42 +417,112 @@
         <div class="crew-card">
           <div class="crew-avatar-wrapper">
             <div class="crew-avatar">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
             </div>
           </div>
-          <h3 class="crew-name">Anna Wróblewska</h3>
-          <span class="crew-role lang-pl">Co-founder & AI Expert</span>
-          <span class="crew-role lang-en">Co-founder & AI Expert</span>
-          <p class="crew-bio lang-pl">Profesor Politechniki Warszawskiej z wieloletnim doświadczeniem w projektach badawczo-rozwojowych oraz transferze wiedzy naukowej do biznesu.</p>
-          <p class="crew-bio lang-en">Associate Professor at Warsaw University of Technology with extensive experience in leading research and development projects and scientific translation.</p>
+          <h3 class="crew-name">dr inż. Anna Wróblewska</h3>
+          <span class="crew-role lang-pl">Co-founder & AI Expert (dr inż.)</span>
+          <span class="crew-role lang-en">Co-founder & AI Expert (Associate Professor, PhD, Eng. )</span>
+          <p class="crew-bio lang-pl">Profesor uczelni na Politechnice Warszawskiej, doktor habilitowana nauk
+            technicznych. Łączy doświadczenie akademickie z Politechniki Warszawskiej oraz współpracę z Warszawskim Uniwersytetem Medycznym z wdrażaniem AI w medycynie i edukacji.</p>
+          <p class="crew-bio lang-en">Associate Professor at Warsaw University of Technology with a DSc/PhD.
+            Combines scientific research from WUT and collaboration with the Medical University of Warsaw with AI deployment in clinical and educational settings.</p>
+          <div class="crew-keywords">
+            <span class="keyword-label lang-pl">Obszary:</span>
+            <span class="keyword-label lang-en">Areas:</span>
+            <span class="keyword-item">NLP</span>
+            <span class="keyword-item">LLMs</span>
+            <span class="keyword-item">Generative AI</span>
+            <span class="keyword-item">Deep Learning</span>
+            <span class="keyword-item">Multimodal</span>
+            <span class="keyword-item">Explainability</span>
+          </div>
+          <div class="crew-socials">
+            <a href="https://orcid.org/0000-0002-3407-7570" target="_blank" rel="noopener noreferrer" class="crew-social-link" title="ORCID Profile">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="16" height="16">
+                <rect width="256" height="256" fill="none"/>
+                <circle cx="128" cy="128" r="96" fill="#a6ce39"/>
+                <path d="M121.2,86.3H102v83.4h19.2c22.1,0,34.8-13,34.8-41.7S143.3,86.3,121.2,86.3z M121.2,153.9H114V99.1h7.2c13.9,0,21.8,7.9,21.8,27.4C143,146,135.1,153.9,121.2,153.9z" fill="#fff"/>
+                <path d="M80.2,86.3H68.8v83.4h11.4V86.3z" fill="#fff"/>
+                <path d="M74.5,63c-3.8,0-6.9,3.1-6.9,6.9s3.1,6.9,6.9,6.9s6.9-3.1,6.9-6.9S78.3,63,74.5,63z" fill="#fff"/>
+              </svg>
+              <span>ORCID</span>
+            </a>
+          </div>
         </div>
 
         <!-- Bernard Wróblewski -->
         <div class="crew-card">
           <div class="crew-avatar-wrapper">
             <div class="crew-avatar">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
             </div>
           </div>
           <h3 class="crew-name">Bernard Wróblewski</h3>
           <span class="crew-role lang-pl">Co-founder & Tech Lead</span>
           <span class="crew-role lang-en">Co-founder & Tech Lead</span>
-          <p class="crew-bio lang-pl">Architekt systemów IT i programista z głęboką wiedzą inżynieryjną, odpowiedzialny za infrastrukturę technologiczną oraz optymalizację algorytmów.</p>
-          <p class="crew-bio lang-en">IT Systems Architect and Developer with deep engineering background, responsible for technology stack, system architecture, and algorithmic efficiency.</p>
+          <p class="crew-bio lang-pl">Architekt systemów IT i programista z głęboką wiedzą inżynieryjną, odpowiedzialny
+            za infrastrukturę technologiczną oraz wdrażanie rozwiązań w medycynie (wspólnie z WUM) i biznesie.</p>
+          <p class="crew-bio lang-en">IT Systems Architect and Developer with deep engineering background, responsible
+            for technology infrastructure and AI implementation in medicine (with MUW) and business.</p>
+          <div class="crew-keywords">
+            <span class="keyword-label lang-pl">Obszary:</span>
+            <span class="keyword-label lang-en">Areas:</span>
+            <span class="keyword-item">Skill Management</span>
+            <span class="keyword-item">Sustainable Dev</span>
+            <span class="keyword-item">CSR</span>
+            <span class="keyword-item">EU Funds</span>
+          </div>
         </div>
 
         <!-- Filip Kucia -->
         <div class="crew-card">
           <div class="crew-avatar-wrapper">
             <div class="crew-avatar">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
             </div>
           </div>
           <h3 class="crew-name">Filip Kucia</h3>
           <span class="crew-role lang-pl">Co-founder & AI Engineer</span>
           <span class="crew-role lang-en">Co-founder & AI Engineer</span>
-          <p class="crew-bio lang-pl">Badacz oraz inżynier uczenia maszynowego specjalizujący się w modelach głębokiego uczenia oraz ich praktycznym wdrożeniu w systemach biznesowych.</p>
-          <p class="crew-bio lang-en">Machine Learning Engineer and Researcher specializing in deep learning architectures and their end-to-end integration into production platforms.</p>
+          <p class="crew-bio lang-pl">Doktorant (PhD Candidate) na Wydziale Matematyki i Nauk Informacyjnych PW. Badacz uczenia maszynowego specjalizujący się w LLM, RAG i ich ewaluacji w zastosowaniach medycznych i edukacyjnych.</p>
+          <p class="crew-bio lang-en">PhD Candidate at WUT (Faculty of Mathematics and Information Science). ML researcher specializing in LLMs, RAG, and their evaluation in clinical and educational contexts.</p>
+          <div class="crew-keywords">
+            <span class="keyword-label lang-pl">Obszary:</span>
+            <span class="keyword-label lang-en">Areas:</span>
+            <span class="keyword-item">LLMs</span>
+            <span class="keyword-item">RAG</span>
+            <span class="keyword-item">Voice Chatbots</span>
+            <span class="keyword-item">HCI</span>
+            <span class="keyword-item">AI in Education</span>
+            <span class="keyword-item">Evaluation & Bias</span>
+          </div>
+          <div class="crew-socials">
+            <a href="https://orcid.org/0009-0005-8473-1402" target="_blank" rel="noopener noreferrer" class="crew-social-link" title="ORCID Profile">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="16" height="16">
+                <rect width="256" height="256" fill="none"/>
+                <circle cx="128" cy="128" r="96" fill="#a6ce39"/>
+                <path d="M121.2,86.3H102v83.4h19.2c22.1,0,34.8-13,34.8-41.7S143.3,86.3,121.2,86.3z M121.2,153.9H114V99.1h7.2c13.9,0,21.8,7.9,21.8,27.4C143,146,135.1,153.9,121.2,153.9z" fill="#fff"/>
+                <path d="M80.2,86.3H68.8v83.4h11.4V86.3z" fill="#fff"/>
+                <path d="M74.5,63c-3.8,0-6.9,3.1-6.9,6.9s3.1,6.9,6.9,6.9s6.9-3.1,6.9-6.9S78.3,63,74.5,63z" fill="#fff"/>
+              </svg>
+              <span>ORCID</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -332,15 +536,22 @@
         <div class="contact-info-panel">
           <h3 class="lang-pl">Rozpocznijmy współpracę</h3>
           <h3 class="lang-en">Let's Collaborate</h3>
-          
-          <p class="lang-pl">Niezależnie od tego, czy reprezentujesz instytucję naukową, medyczną, edukacyjną czy biznesową - chętnie porozmawiamy o tym, jak możemy pomóc wdrożyć nowoczesne rozwiązania AI dostosowane do Twoich potrzeb.</p>
-          <p class="lang-en">Whether you represent a scientific institution, healthcare center, education facility, or business, we are excited to talk about how we can deploy cutting-edge AI for your needs.</p>
+
+          <p class="lang-pl">Niezależnie od tego, czy reprezentujesz instytucję naukową, medyczną, edukacyjną czy
+            biznesową - chętnie porozmawiamy o tym, jak możemy pomóc wdrożyć nowoczesne rozwiązania AI dostosowane do
+            Twoich potrzeb.</p>
+          <p class="lang-en">Whether you represent a scientific institution, healthcare center, education facility, or
+            business, we are excited to talk about how we can deploy cutting-edge AI for your needs.</p>
 
           <div class="contact-details">
             <!-- Location -->
             <div class="contact-detail-item">
               <div class="contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
               </div>
               <div>
                 <div class="contact-text-label lang-pl">Lokalizacja</div>
@@ -353,12 +564,18 @@
             <!-- LinkedIn -->
             <div class="contact-detail-item">
               <div class="contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
               </div>
               <div>
                 <div class="contact-text-label">LinkedIn</div>
                 <div class="contact-text-value">
-                  <a href="https://www.linkedin.com/company/sparrows-ai/" target="_blank" rel="noopener noreferrer">sparrows-ai</a>
+                  <a href="https://www.linkedin.com/company/sparrows-ai/" target="_blank"
+                    rel="noopener noreferrer">sparrows-ai</a>
                 </div>
               </div>
             </div>
@@ -369,18 +586,28 @@
         <div class="email-card">
           <div class="email-card-glow"></div>
           <div class="email-icon-large">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
           </div>
           <h4 class="email-title lang-pl">Napisz do nas</h4>
           <h4 class="email-title lang-en">Contact via Email</h4>
-          <p class="email-desc lang-pl">Skopiuj nasz adres e-mail lub przejdź bezpośrednio do klienta pocztowego klikając poniżej.</p>
-          <p class="email-desc lang-en">Copy our address or click to send an email directly using your local mail client.</p>
+          <p class="email-desc lang-pl">Skopiuj nasz adres e-mail lub przejdź bezpośrednio do klienta pocztowego
+            klikając poniżej.</p>
+          <p class="email-desc lang-en">Copy our address or click to send an email directly using your local mail
+            client.</p>
 
           <!-- Interactive email copy display -->
           <div class="email-address-display" id="email-copy-trigger" title="Kliknij, aby skopiować">
             <span id="target-email">contact@sparrows.ai</span>
             <div class="copy-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </svg>
             </div>
           </div>
 
@@ -409,13 +636,21 @@
           <a href="#" class="footer-logo">
             <span class="brand-text">Sparrows <span>AI</span></span>
           </a>
-          <p class="lang-pl">&copy; 2026 SPARROWS AI. Pierwszy spin-off AI z Politechniki Warszawskiej. Wszelkie prawa zastrzeżone.</p>
-          <p class="lang-en">&copy; 2026 SPARROWS AI. First AI spin-off from Warsaw University of Technology. All rights reserved.</p>
+          <p class="lang-pl">&copy; 2026 SPARROWS AI. Pierwszy spin-off AI z Politechniki Warszawskiej. Wszelkie prawa
+            zastrzeżone.</p>
+          <p class="lang-en">&copy; 2026 SPARROWS AI. First AI spin-off from Warsaw University of Technology. All rights
+            reserved.</p>
         </div>
 
         <div class="footer-socials">
-          <a href="https://www.linkedin.com/company/sparrows-ai/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <a href="https://www.linkedin.com/company/sparrows-ai/" target="_blank" rel="noopener noreferrer"
+            class="social-link" aria-label="LinkedIn Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
           </a>
         </div>
       </div>
@@ -425,4 +660,5 @@
   <!-- JS Logic -->
   <script src="script.js"></script>
 </body>
+
 </html>

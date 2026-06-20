@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   // --- LANGUAGE SWITCHER ---
-  const langSwitchBtn = document.getElementById('lang-switch-btn');
+  const langDropdown = document.getElementById('lang-dropdown');
+  const langDropdownBtn = document.getElementById('lang-dropdown-btn');
+  const langDropdownItems = document.querySelectorAll('.lang-dropdown-item');
   const htmlElement = document.documentElement;
   const STORAGE_KEY = 'sparrows-lang';
 
@@ -17,16 +19,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const setLanguage = (lang) => {
     htmlElement.setAttribute('lang', lang);
     localStorage.setItem(STORAGE_KEY, lang);
+
+    // Update active class in dropdown items
+    langDropdownItems.forEach(item => {
+      if (item.getAttribute('data-lang') === lang) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+
+    // Re-run scrollSpy if it is defined to update nav link active states immediately
+    if (typeof scrollSpy === 'function') {
+      scrollSpy();
+    }
   };
 
-  // Toggle language on button click
-  if (langSwitchBtn) {
-    langSwitchBtn.addEventListener('click', () => {
-      const currentLang = htmlElement.getAttribute('lang') || 'pl';
-      const nextLang = currentLang === 'pl' ? 'en' : 'pl';
-      setLanguage(nextLang);
+  // Toggle dropdown on button click
+  if (langDropdownBtn && langDropdown) {
+    langDropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = langDropdown.classList.toggle('open');
+      langDropdownBtn.setAttribute('aria-expanded', isOpen);
     });
   }
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (langDropdown && langDropdown.classList.contains('open')) {
+      if (!langDropdown.contains(e.target)) {
+        langDropdown.classList.remove('open');
+        langDropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
+
+  // Switch language on item click
+  langDropdownItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const selectedLang = item.getAttribute('data-lang');
+      setLanguage(selectedLang);
+    });
+  });
 
   // Initialize lang
   setLanguage(getInitialLanguage());
