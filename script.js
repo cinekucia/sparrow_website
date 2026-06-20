@@ -142,9 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- COPY EMAIL TO CLIPBOARD ---
   const emailTrigger = document.getElementById('email-copy-trigger');
   const tooltip = document.getElementById('email-tooltip');
-  const targetEmail = document.getElementById('target-email').innerText;
 
   if (emailTrigger && tooltip) {
+    const targetEmail = emailTrigger.getAttribute('data-email') || 'sparrowsspacepw@gmail.com';
     emailTrigger.addEventListener('click', () => {
       // Copy to clipboard
       navigator.clipboard.writeText(targetEmail)
